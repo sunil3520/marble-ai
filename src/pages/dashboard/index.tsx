@@ -22,10 +22,12 @@ const filters: CrudFilter[] = [
 ];
 
 export const Dashboard: React.FC = () => {
+    let x= dayjs()
     const { data: dailyRevenue } = useList<IChartDatum>({
         resource: "dailyRevenue",
         filters,
     });
+
 
     const { data: dailyOrders } = useList<IChartDatum>({
         resource: "dailyOrders",
@@ -57,7 +59,7 @@ export const Dashboard: React.FC = () => {
     const tabs: TTab[] = [
         {
             id: 1,
-            label: "Daily Revenue",
+            label: "Online store sessions",
             content: (
                 <ResponsiveAreaChart
                     kpi="Daily revenue"
@@ -71,7 +73,7 @@ export const Dashboard: React.FC = () => {
         },
         {
             id: 2,
-            label: "Daily Orders",
+            label: "Net return value",
             content: (
                 <ResponsiveBarChart
                     kpi="Daily orders"
@@ -85,7 +87,21 @@ export const Dashboard: React.FC = () => {
         },
         {
             id: 3,
-            label: "New Customers",
+            label: "Total orders",
+            content: (
+                <ResponsiveAreaChart
+                    kpi="New customers"
+                    data={memoizedNewCustomersData}
+                    colors={{
+                        stroke: "rgb(76, 175, 80)",
+                        fill: "rgba(54, 162, 235, 0.2)",
+                    }}
+                />
+            ),
+        },
+        {
+            id: 3,
+            label: "Conversion rate",
             content: (
                 <ResponsiveAreaChart
                     kpi="New customers"
@@ -101,13 +117,15 @@ export const Dashboard: React.FC = () => {
 
     return (
         <>
-            <Stats
+            {/* <Stats
                 dailyRevenue={dailyRevenue}
                 dailyOrders={dailyOrders}
                 newCustomers={newCustomers}
-            />
+            /> */}
             <TabView tabs={tabs} />
-            <RecentSales />
+            {/* <RecentSales /> */}
+         
+
         </>
     );
 };
