@@ -20,7 +20,7 @@ import lowTredingIcon from "../../assets/lowTredingIcon.svg";
 import highTredingIcon from "../../assets/highTredingIcon.svg";
 import { FaPencil } from "react-icons/fa6";
 import { FaChartLine } from "react-icons/fa6";
-export const TabItem = ({ label, isActive, clickHandler }: TTabItem) => {
+export const TabItem = ({ label, isActive, clickHandler,total }: any) => {
   return (
     <div
       className={`border-2 w-[100%] bg-white ${isActive && "bg-[#E3E3E3]"} 
@@ -48,7 +48,7 @@ export const TabItem = ({ label, isActive, clickHandler }: TTabItem) => {
         </Menu>
       </div>
       <div className="flex items-center">
-        <p className="mr-2 text-2xl font-bold inter">255,581</p>
+        <p className="mr-2 text-2xl font-bold inter">{total}</p>
         <span>
           <img
             className="w-3 font-bold"
