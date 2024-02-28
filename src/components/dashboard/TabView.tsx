@@ -15,12 +15,11 @@ type TTabViewProps = {
 };
 
 export const TabView = ({ tabs }: TTabViewProps) => {
-  console.log(tabs, "tabs");
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="w-[90%] p-4 bg-slate-50 border-8 rounded-lg ">
-      <Accordion allowToggle>
+    <div className="w-[90%] p-4 rounded-lg ">
+      <Accordion allowToggle defaultIndex={[0]}>
         <AccordionItem className="bg-[white]">
           <div className="w-[100%] flex justify-between items-center">
             <div className="w-[95%] flex gap-4 ">
