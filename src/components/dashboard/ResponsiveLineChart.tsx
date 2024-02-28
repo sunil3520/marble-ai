@@ -53,6 +53,7 @@ type TResponsiveAreaChartProps = {
 
 export const ResponsiveLineChart = ({
   kpi,
+  data,
   colors,
 }:any) => {
   return (
@@ -84,7 +85,7 @@ export const ResponsiveLineChart = ({
             fontSize: "12px",
           }}
           interval="preserveStartEnd"
-          domain={[0, "dataMax + 25"]}
+          domain={[0, "dataMax + 0"]}
         />
         <Tooltip
           content={<ChartTooltip kpi={kpi} colors={colors} />}

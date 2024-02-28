@@ -14,7 +14,7 @@ type TTabViewProps = {
   tabs: TTab[];
 };
 
-export const TabView = ({ tabs }: TTabViewProps) => {
+export const TabView = ({ tabs }:any) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -27,6 +27,7 @@ export const TabView = ({ tabs }: TTabViewProps) => {
                 <TabItem
                   key={tab?.id}
                   label={tab?.label}
+                  total={tab?.total}
                   isActive={index === activeTab}
                   clickHandler={() => setActiveTab(index)}
                 />
