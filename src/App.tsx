@@ -36,9 +36,7 @@ function App() {
             <GitHubBanner />
             <RefineKbarProvider>
                 <Refine
-                    dataProvider={dataProvider(
-                        "https://api.finefoods.refine.dev",
-                    )}
+                    dataProvider={dataProvider("https://api.finefoods.refine.dev",)}
                     routerProvider={routerBindings}
                     resources={[
                         {
