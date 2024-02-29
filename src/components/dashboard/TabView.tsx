@@ -10,9 +10,9 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
-type TTabViewProps = {
-  tabs: TTab[];
-};
+// type TTabViewProps = {
+//   tabs: TTab[];
+// };
 
 export const TabView = ({ tabs }:any) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -23,7 +23,7 @@ export const TabView = ({ tabs }:any) => {
         <AccordionItem className="bg-[white]">
           <div className="w-[100%] flex justify-between items-center">
             <div className="w-[95%] flex gap-4 ">
-              {tabs?.map((tab: TTab, index: number) => (
+              {tabs?.map((tab: any, index: number) => (
                 <TabItem
                   key={tab?.id}
                   label={tab?.label}
